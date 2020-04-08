@@ -1,0 +1,57 @@
+
+<html>
+  <head>
+    <title>A-Frame Click & Drag Component - Physics</title>
+    <script src="https://jesstelford.github.io/aframe-click-drag-component/build.js"></script>
+	<script src="js/drag.js"></script>
+
+  </head>
+  <body>
+    <a-scene physics="restitution:0; gravity:-9.8;">
+
+	<a-assets>
+    <a-asset-item id="king-black-obj" src="models/king_black.obj"></a-asset-item>
+    <a-asset-item id="king-black-mtl" src="models/king_black.mtl"></a-asset-item>
+	<a-asset-item id="king-white-obj" src="models/king_white.obj"></a-asset-item>
+    <a-asset-item id="king-white-mtl" src="models/king_white.mtl"></a-asset-item>
+	
+	<a-asset-item id="soldier-white1-obj" src="models/soldier_white.obj"></a-asset-item>
+	<a-asset-item id="soldier-white1-mtl" src="models/soldier_white.mtl"></a-asset-item>
+	<a-asset-item id="soldier-white2-obj" src="models/soldier_white.obj"></a-asset-item>
+	<a-asset-item id="soldier-white2-mtl" src="models/soldier_white.mtl"></a-asset-item>
+	
+	<a-asset-item id="board-obj" src="models/board_2.obj"></a-asset-item>
+	<a-asset-item id="board-mtl" src="models/board_2.mtl"></a-asset-item>
+  
+  
+  
+  
+  </a-assets>
+	<a-entity click-drag id="kingblack" scale="0.5 0.5 0.5" position="-0.35 0.30 -1.72" dynamic-body="shape: box; mass: 5" obj-model="obj: #king-black-obj; mtl: #king-black-mtl"></a-entity>
+    <a-entity click-drag id="kingwhite" scale="0.5 0.5 0.5" position="-0.35 0.30 -6.43" dynamic-body="shape: box; mass: 9" obj-model="obj: #king-white-obj; mtl: #king-white-mtl"></a-entity>
+    
+	<a-entity click-drag id="soldierwhite1" scale="0.5 0.5 0.5" position="2.35 0.30 -5.75" dynamic-body="shape: box; mass: 9" obj-model="obj: #soldier-white1-obj; mtl: #soldier-white1-mtl"></a-entity>
+    <a-entity click-drag id="soldierwhite2" scale="0.5 0.5 0.5" position="1.65 0.30 -5.75" dynamic-body="shape: box; mass: 9" obj-model="obj: #soldier-white1-obj; mtl: #soldier-white1-mtl"></a-entity>
+    
+	
+	
+	
+	<a-entity id="board" obj-model="obj: #board-obj; mtl: #board-mtl" scale="0.15 0.15 0.15" position="0 0 -4" rotation="0 0 0"></a-entity>
+    
+	
+	
+	<a-plane static-body visible="false" rotation="-90 0 0" position="0 0.2 -4" width="200" height="200" color="gray"></a-plane>
+	<a-sky color="lightblue"></a-sky>
+	<a-entity position="0 1 2">
+	<a-camera look-controls-enabled="true"></a-camera>
+	</a-entity>
+    <script>
+	drag();
+    </script>
+    </a-scene>
+  </body>
+</html>
+
+
+
+ 
